@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Legra</title>
+		<script type="text/javascript" charset="UTF-8" src="Vue.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="app1">
+		  <p>{{ message }}</p>
+		  <input type="text" v-model="message" name="">
+		  <pre>{{ $data | json}}</pre>
+		</div>
+
+
+		<div id="app-2">
+		  <span v-bind:title="message">
+		    Подержи курсор надо мной пару секунд,
+		    чтобы увидеть динамически связанное значение title!
+		  </span>
+		</div>
+
+		<div id="app3">
+			<ul>
+				<li v-for="bear in bears" v-bind:class="{ 'strike': bear.status }">{{ bear.name }}</li>
+			</ul>
+
+		</div>
+
+		<script type="text/javascript"> 
+			var app = new Vue({el: '#app1', data: {message: 'Hello Vue!'} })
+			var app2 = new Vue({
+			  el: '#app-2',
+			  data: {
+			    message: 'Вот когда вы загрузили эту страницу: ' + new Date().toLocaleString()
+			  }
+			})
+
+			var app = new Vue({
+							el: '#app3', 
+							data: {
+								bears: [
+								{ 
+									name: 'гризли',
+									status: false
+								},
+								{ 
+									name: 'белый',
+									status: false
+								},
+								{ 
+									name: 'панда',
+									status: true
+								},
+								{ 
+									name: 'губач',
+									status: false
+								},
+						
+								]
+							} 
+						})
+
+		</script> 
+	</body>
+
+</html>
