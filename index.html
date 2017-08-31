@@ -28,6 +28,20 @@
 
 		</div>
 
+		<div id="app4">
+			<form action="">
+				<input type="text" v-model="message" @keyup.enter.13="onEnter">
+				<button v-on:click.prevent="onClick">Кнопка</button>
+			</form>
+			
+
+		</div>
+
+		<div id="app5">
+ 			<div class="box" v-show=""></div>
+			
+
+		</div>
 		<script type="text/javascript"> 
 			var app = new Vue({el: '#app1', data: {message: 'Hello Vue!'} })
 			var app2 = new Vue({
@@ -61,7 +75,22 @@
 								]
 							} 
 						})
+			var app4 = new Vue({
+			  el: '#app4',
+			  data: {
+			    message: 'Вот когда вы загрузили эту страницу: ' + new Date().toLocaleString()
+			  },
+			  methods: {
+			  	onClick: function(e) {
+			  		// e.preventDefault()
 
+			  		console.log('что-то важное')
+			  	},
+			  	onEnter: function() {
+			  		console.log(this.message)
+			  	},
+			  }
+			})
 		</script> 
 	</body>
 
