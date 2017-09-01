@@ -34,3 +34,25 @@ li:last-child{
 	height: 200px;
 	background: red;
 }
+
+.block1 {
+   width: 200px;
+   height: 200px;
+   margin: 5px;
+   float: left;
+   background-color: lightpink;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: 'Ubuntu', sans-serif;
+   color: #272727;
+   cursor: pointer;
+}
+
+.active {
+   background-color: lightblue;
+   background-image: url('https://es-static.z-dn.net/files/dac/9b9ae481fa3a7cfeebfa6ff4b69e7c88.jpg');
+   background-size: contain;
+   background-repeat: no-repeat;
+   color: #fff;
+}

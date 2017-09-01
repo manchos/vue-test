@@ -1,0 +1,10 @@
+Добавление нового элемента в данные полученные в формате json 
+response.data.model.data.forEach(function(item, i, arr) { item.show = true });?
+
+http://jieter.github.io/Leaflet-semicircle/examples/semicircle.html
+
+https://cukikt0302.github.io/vue-simple-table/index.html#/
+
+https://github.com/jieter/Leaflet-semicircle
+
+https://codepen.io/tochkadev/pen/BLLmkK

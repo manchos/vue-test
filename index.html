@@ -38,10 +38,23 @@
 		</div>
 
 		<div id="app5">
- 			<div class="box" v-show=""></div>
+			<button @click="show = !show" >{{ btnText }}</button>
+ 			<div class="box" v-if="show"></div>
+ 			<div v-else>Пусто</div>
 			
 
 		</div>
+
+		<div id="app6">
+		   <div class="block1" 
+		        v-for="(element, index) in elements"
+		        @click="element.status = !element.status"
+		        :class="{ 'active': element.status }"
+		   >
+		      Click me!
+		   </div>
+		</div>
+
 		<script type="text/javascript"> 
 			var app = new Vue({el: '#app1', data: {message: 'Hello Vue!'} })
 			var app2 = new Vue({
@@ -90,6 +103,29 @@
 			  		console.log(this.message)
 			  	},
 			  }
+			})
+			var app5 = new Vue({
+				el: '#app5',
+				data: {show: false},
+				computed: {
+				    btnText: function() {
+				      if(this.show) {
+				        return 'скрыть'
+				      }				      
+				      return 'показать'
+				    }
+			  	}
+			})
+
+			var app6 = new Vue({
+			   el: '#app6',
+			   data: {
+			      elements: [
+			         { id: 1, status: false },
+			         { id: 2, status: false },
+			         { id: 3, status: false }
+			      ]
+			   }
 			})
 		</script> 
 	</body>
